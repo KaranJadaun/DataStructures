@@ -27,7 +27,11 @@ Linked = Linkedlist()
 
 # Assigning the head value 
 Linked.head = Node(11)
+
+# Assigning value to the second head
 linked2 = Node(22)
+
+# Then the third head
 linked3 = Node(33)
 Linked.head.next = linked2
 linked2.next = linked3
