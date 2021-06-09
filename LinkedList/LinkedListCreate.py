@@ -33,6 +33,15 @@ linked2 = Node(22)
 
 # Then the third head
 linked3 = Node(33)
+
+# Linking the first head with second head
+# Most important code to implement Linkedlist
 Linked.head.next = linked2
+
+# Linking second head with third head and so on.....
 linked2.next = linked3
+
+# Calling printing Function
 Linked.printLinkedlist()
+
+# Thank you
