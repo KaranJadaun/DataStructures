@@ -21,7 +21,11 @@ class Linkedlist:
         while(temp):
             print(temp.data)
             temp = temp.next
+            
+# Assigning a object to class
 Linked = Linkedlist()
+
+# Assigning the head value 
 Linked.head = Node(11)
 linked2 = Node(22)
 linked3 = Node(33)
