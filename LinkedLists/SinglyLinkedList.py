@@ -98,6 +98,32 @@ class Linkedlist:
             return
         prev.next = temp.next
 
+    def delete_from_position(self):
+        position = input("enter position")
+        pos = 0
+        if (position==0):
+            self.start = self.start.next
+            return
+        temp = self.start
+        prev = None
+        while(temp.next is not None):
+            prev = temp
+            temp = temp.next
+            pos += 1
+            if (position == pos):
+                prev.next = temp.next
+                return
+            else:
+                print("position not found")
+
+    def size_of_linkedlist(self):
+        temp = self.start
+        count = 0
+        while(temp):
+            count += 1
+            temp = temp.next
+        print(count)
+
 
 sll = Linkedlist()
 while(1):
@@ -110,6 +136,8 @@ while(1):
     print("press 6 to delete from beginning")
     print("press 7 to delete from last")
     print("press 8 to delete after given node")
+    print("press 9 to delete from position")
+    print("press 10 to count size of linkedlist")
     print("press 100 to quit")
     operation = int(input("enter operation: "))
     if (operation==1):
@@ -128,5 +156,9 @@ while(1):
         sll.delete_from_end()
     if (operation==8):
         sll.delete_after_given_node()
+    if (operation==9):
+        sll.delete_from_position()
+    if (operation==10):
+        sll.size_of_linkedlist()
     if (operation==100):
         break
