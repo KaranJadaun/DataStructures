@@ -75,20 +75,28 @@ class Linkedlist:
             print("no linkedlist exist")
             return
         temp = self.start
+        prev = None
         while (temp.next is not None):
+            prev = temp
             temp = temp.next
-        temp.next = None
+        if (prev is None):
+            self.start = None
+        prev.next = None
 
     def delete_after_given_node(self):
         value = input("enter value: ")
         temp = self.start
-        while(temp.info != value):
-            temp = temp.next
-        if (temp.next is None):
+        if (self.start is None):
             print("no linkedlist exist")
             return
-        temp.next = temp.next.next
-        
+        prev = None
+        while(temp.info != value):
+            prev = temp
+            temp = temp.next
+        if (prev is None):
+            self.start = None
+            return
+        prev.next = temp.next
 
 
 sll = Linkedlist()
@@ -99,6 +107,9 @@ while(1):
     print("press 3 to insert at beginning")
     print("press 4 to insert at end")
     print("press 5 to insert after given node")
+    print("press 6 to delete from beginning")
+    print("press 7 to delete from last")
+    print("press 8 to delete after given node")
     print("press 100 to quit")
     operation = int(input("enter operation: "))
     if (operation==1):
@@ -111,5 +122,11 @@ while(1):
         sll.insert_at_end()
     if (operation==5):
         sll.insert_after_given_node()
+    if (operation==6):
+        sll.delete_from_beg()
+    if (operation==7):
+        sll.delete_from_end()
+    if (operation==8):
+        sll.delete_after_given_node()
     if (operation==100):
         break
